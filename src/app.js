@@ -8,13 +8,13 @@ import { places } from './demo';
 
 const myMap = new Mapp.Map({ width: 1500, height: 500, mapTexture, pinTexture: redMarker });
 
-const mainPin = new Mapp.Marker({ map: myMap, x: 900, y: 50, texture: yellowMarker });
+const mainPin = new Mapp.Marker({ map: myMap, x: 900, y: 50, texture: yellowMarker, id: 555 });
 
-const myPins = places.map( place => new Mapp.Marker({ map: myMap, x: place.x, y: place.y }) );
+const myPins = places.map( place => new Mapp.Marker({ map: myMap, x: place.x, y: place.y, id: place.id }) );
 
 const otherPins = [];
 for ( let i = 0; i < 8; i++ ) {
-    otherPins.push( new Mapp.Marker({ map: myMap, x: 100+(i*40), y: 400, texture: greenMarker }) )
+    otherPins.push( new Mapp.Marker({ map: myMap, x: 100+(i*40), y: 400, texture: greenMarker, id: i+8 }) )
 }
 
 /* const appOnResize = () => {
